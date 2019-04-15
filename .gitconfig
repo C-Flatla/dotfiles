@@ -1,0 +1,10 @@
+[user]
+	name = Cody Flatla
+[core]
+	excludesfile = /Users/cody/.gitignore_global
+[alias]
+	co = checkout
+	b = branch
+	s = status
+[push]
+	default = current
