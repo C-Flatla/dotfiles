@@ -1,0 +1,10 @@
+# Mac specific settings
+
+# Show hidden files by default in the Finder
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Change screenshot save location to /Downloads
+defaults write com.apple.screencapture location ~/Downloads
+
+# Restart Finder to show changes
+killall Finder
