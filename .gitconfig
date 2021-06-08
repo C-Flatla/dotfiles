@@ -8,3 +8,8 @@
 	s = status
 [push]
 	default = current
+
+# Don't add any configuration below this line
+# This is to support a local gitconfig file
+[include]
+  path = .gitconfig.local
