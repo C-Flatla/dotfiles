@@ -17,5 +17,6 @@ configure_mac() {
 
 link_all
 configure_mac
+verbose_rebash=true && source ~/.bash_profile
 
 echo "Done :)"
