@@ -10,3 +10,6 @@ defaults write com.apple.screencapture location ~/Downloads
 
 # Restart Finder to show changes
 killall Finder
+
+# Change default shell to bash
+chsh -s /bin/bash
