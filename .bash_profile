@@ -3,12 +3,12 @@
 # **********************************************************************#
 #                        Source related files                           #
 #***********************************************************************#
+[ -f $HOME/.exports ] && source $HOME/.exports
+[ -f $HOME/.functions ] && source $HOME/.functions
+[ -f $HOME/.aliases ] && source $HOME/.aliases
 
 [ -f $HOME/.bashrc ] && source $HOME/.bashrc
 
-# Clean up duplicates
-# Found from: http://unix.stackexchange.com/a/40755
-PATH=`printf %s "$PATH" | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
 
 # This should be the last line of the file
 # For local changes

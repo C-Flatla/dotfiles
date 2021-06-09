@@ -1,0 +1,72 @@
+#!/bin/bash
+
+#***********************************************************************#
+#                             Useful functions                          #
+#***********************************************************************#
+
+# Parses the $PATH environment variable and splits them by ':' onto new lines
+# Found from: http://www.cyberciti.biz/faq/howto-print-path-variable/
+function path() {
+  old=$IFS
+  IFS=:
+  printf "%s\n" $PATH
+  IFS=$old
+}
+
+# Sets the name of the tab
+# Found from:
+# http://thelucid.com/2012/01/04/naming-your-terminal-tabs-in-osx-lion/
+function tab() {
+  current_directory=${PWD##*/}
+  printf "\e]1;${1:-$current_directory}\a"
+}
+
+# Sets the name of the window
+# Found from:
+# http://thelucid.com/2012/01/04/naming-your-terminal-tabs-in-osx-lion/
+function winname() {
+  printf "\e]2;$1\a"
+}
+
+# Prints out your current ip address
+# Found from: http://apple.stackexchange.com/questions/20547/how-do-i-find-my-ip-address-from-the-command-line
+function myip {
+  # For Unix machines
+  local_ip=`ifconfig | grep --color=never 'inet.*broadcast' | awk '{ printf "\t%s\n", $2}'`
+  printf "Local:\n$local_ip"
+  # printf "$local_ip" | pbcopy
+  printf "\nExternal:\n\t"
+  dig @resolver1.opendns.com myip.opendns.com -4 +short
+  # If no dig use: (sudo apt-get install dnsutils)
+  # curl http://ipecho.net/plain
+}
+
+function test_internet() {
+  local_ip=`ifconfig | grep --color=never 'inet.*broadcast' | awk '{ printf "\t%s\n", $2}'`
+  ping -c3 $local_ip
+  echo ""
+  ping 1.1.1.1
+}
+
+# Generates a string of the current git branch (only if in git like in cd())
+# Found from: https://stackoverflow.com/a/1418022
+# https://stackoverflow.com/a/2185353/7573616
+function current_branch() {
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    git rev-parse --abbrev-ref HEAD
+  fi
+}
+
+function current_branch_str() {
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    echo "(`current_branch`)"
+  else
+    echo ""
+  fi
+}
+
+
+# This should be the last line of the file
+# For local changes
+# Don't make edits below this
+[ -f ".functions.local" ] && source ".functions.local"
