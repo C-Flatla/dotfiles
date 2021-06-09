@@ -9,8 +9,9 @@
 
 [ -f $HOME/.bashrc ] && source $HOME/.bashrc
 
+if [ -v verbose_rebash ]; then echo "SOURCED .bash_profile"; fi
 
 # This should be the last line of the file
 # For local changes
 # Don't make edits below this
-[ -f ".bash_profile.local" ] && source ".bash_profile.local"
+[ -f "$HOME/.bash_profile.local" ] && source "$HOME/.bash_profile.local"

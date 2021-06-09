@@ -22,7 +22,9 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # Found from: http://unix.stackexchange.com/a/40755
 PATH=`printf %s "$PATH" | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
 
+if [ -v verbose_rebash ]; then echo "SOURCED .exports"; fi
+
 # This should be the last line of the file
 # For local changes
 # Don't make edits below this
-[ -f ".exports.local" ] && source ".exports.local"
+[ -f "$HOME/.exports.local" ] && source "$HOME/.exports.local"

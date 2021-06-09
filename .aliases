@@ -16,7 +16,7 @@ alias tir='tig refs'
 #***********************************************************************#
 #                             Bash aliases                              #
 #***********************************************************************#
-alias rebash='source ~/.bash_profile'
+alias rebash='verbose_rebash=1; source ~/.bash_profile; unset verbose_rebash'
 alias brc='code ~/.bashrc'
 
 #***********************************************************************#
@@ -27,7 +27,9 @@ alias prune-merged='git branch --merged | grep -v "master" >/tmp/merged-branches
 alias master='git checkout master; git pull;'
 alias cb='current_branch'
 
+if [ -v verbose_rebash ]; then echo "SOURCED .aliases"; fi
+
 # This should be the last line of the file
 # For local changes
 # Don't make edits below this
-[ -f ".aliases.local" ] && source ".aliases.local"
+[ -f "$HOME/.aliases.local" ] && source "$HOME/.aliases.local"

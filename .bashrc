@@ -4,8 +4,9 @@
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
+if [ -v verbose_rebash ]; then echo "SOURCED .bashrc"; fi
 
 # This should be the last line of the file
 # For local changes
 # Don't make edits below this
-[ -f ".bashrc.local" ] && source ".bashrc.local"
+[ -f "$HOME/.bashrc.local" ] && source "$HOME/.bashrc.local"
