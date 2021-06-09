@@ -3,8 +3,8 @@
 #***********************************************************************#
 #                             Useful aliases                            #
 #***********************************************************************#
-alias l='ls -ahlp --color'
-alias ll='ls -ahlp --color'
+alias l='ls -ahlpG'
+alias ll='ls -ahlpG'
 alias cl='clear'
 alias ~='cd ~'
 alias .='cd ..'
