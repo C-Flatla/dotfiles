@@ -179,8 +179,11 @@ set mouse-wheel-cursor		= no		# Prefer moving the cursor to scrolling the view?
 bind main	C	?git cherry-pick %(commit)
 bind status	C	!git commit
 bind stash	A	?git stash apply %(stash)
+# bind stash	P	?git stash pop %(stash)
 bind stash	P	<git stash pop %(stash) # CUSTOMIZED
-bind stash	!	?git stash drop %(stash)
+# bind stash	!	?git stash drop %(stash)
+bind stash	!	>git stash drop %(stash) # CUSTOMIZED
+# bind refs	C	?git checkout %(branch)
 bind refs	C	<git checkout %(branch) # CUSTOMIZED
 bind refs	!	@git branch -D %(branch)
 
