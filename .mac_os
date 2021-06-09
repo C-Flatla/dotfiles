@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Mac specific settings
 
 # Show hidden files by default in the Finder
