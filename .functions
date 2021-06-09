@@ -65,7 +65,7 @@ function current_branch_str() {
   fi
 }
 
-if [ -v verbose_rebash ]; then echo "SOURCED .functions"; fi
+if [[ $verbose_rebash ]]; then echo "SOURCED .functions"; fi
 
 # This should be the last line of the file
 # For local changes
