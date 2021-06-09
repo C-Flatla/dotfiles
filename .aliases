@@ -16,7 +16,7 @@ alias tir='tig refs'
 #***********************************************************************#
 #                             Bash aliases                              #
 #***********************************************************************#
-alias rebash='verbose_rebash=1; source ~/.bash_profile; unset verbose_rebash'
+alias rebash='verbose_rebash=1 && source ~/.bash_profile'
 alias brc='code ~/.bashrc'
 
 #***********************************************************************#
