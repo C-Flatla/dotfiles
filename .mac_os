@@ -8,6 +8,9 @@ defaults write com.apple.finder AppleShowAllFiles -bool true
 # Change screenshot save location to /Downloads
 defaults write com.apple.screencapture location ~/Downloads
 
+# Disable guest browsing in Chrome
+defaults write com.google.Chrome BrowserGuestModeEnabled -bool false
+
 # Restart Finder to show changes
 killall Finder
 
