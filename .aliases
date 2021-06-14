@@ -10,7 +10,7 @@ alias ~='cd ~'
 alias ..='cd ..'
 alias grep='grep --color=always'
 alias ps-grep='ps aux | grep'
-alias tir='tig refs'
+alias path='echo $PATH | tr ":" "\n"'
 
 #***********************************************************************#
 #                             Bash aliases                              #
@@ -25,6 +25,7 @@ alias s='git status'
 alias prune-merged='git branch --merged | grep -v "master" >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches && rm /tmp/merged-branches'
 alias master='git checkout master; git pull;'
 alias cb='current_branch'
+alias tir='tig refs'
 
 if [[ $verbose_rebash ]]; then echo "SOURCED .aliases"; fi
 

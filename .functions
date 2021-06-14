@@ -4,15 +4,6 @@
 #                             Useful functions                          #
 #***********************************************************************#
 
-# Parses the $PATH environment variable and splits them by ':' onto new lines
-# Found from: http://www.cyberciti.biz/faq/howto-print-path-variable/
-function path() {
-  old=$IFS
-  IFS=:
-  printf "%s\n" $PATH
-  IFS=$old
-}
-
 # Sets the name of the tab
 # Found from:
 # http://thelucid.com/2012/01/04/naming-your-terminal-tabs-in-osx-lion/
