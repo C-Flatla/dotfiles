@@ -9,6 +9,8 @@
 	l = log
 [push]
 	default = current
+[pull]
+	rebase = false
 
 # Don't add any configuration below this line
 # This is to support a local gitconfig file
