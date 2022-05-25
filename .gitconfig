@@ -7,6 +7,9 @@
 	b = branch
 	s = status
 	l = log
+	ignore = update-index --assume-unchanged
+	unignore = update-index --no-assume-unchanged
+	ignored = !git ls-files -v | grep '^[[:lower:]]'
 [push]
 	default = current
 [pull]
