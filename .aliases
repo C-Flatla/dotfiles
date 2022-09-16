@@ -28,6 +28,7 @@ alias master='git checkout master; git pull;'
 alias cb='current_branch'
 alias tir='tig refs'
 alias git-ignore='git update-index --assume-unchanged'
+alias git-ignored='git ls-files -v | grep "^[[:lower:]]"'
 alias git-unignore='git update-index --no-assume-unchanged'
 
 if [[ $verbose_rebash ]]; then echo "SOURCED .aliases"; fi
