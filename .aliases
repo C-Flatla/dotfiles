@@ -11,6 +11,7 @@ alias ..='cd ..'
 alias grep='grep --color=always'
 alias ps-grep='ps aux | grep'
 alias path='echo $PATH | tr ":" "\n"'
+alias alldone='say -v "Fred" -r 120 "All done" || say -v "Fred" -r 120 "Something went wrong"' # comand1 && alldone
 
 #***********************************************************************#
 #                             Bash aliases                              #
@@ -28,7 +29,6 @@ alias cb='current_branch'
 alias tir='tig refs'
 alias git-ignore='git update-index --assume-unchanged'
 alias git-unignore='git update-index --no-assume-unchanged'
-alias alldone='say -v "Fred" -r 90 "All done" || say -v "Fred" -r 120 "Something went wrong"' # comand1 && alldone
 
 if [[ $verbose_rebash ]]; then echo "SOURCED .aliases"; fi
 
