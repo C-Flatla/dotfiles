@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # use up and down arrow keys to move up/down in control-r history search
 bind '"\e[A":history-search-backward'
