@@ -2,6 +2,12 @@
 
 link_all () {
   echo "Symlinking all dotfiles"
+  touch .aliases.local
+  touch .bash_profile.local
+  touch .bashrc.local
+  touch .exports.local
+  touch .functions.local
+  touch .gitconfig.local
   for file in $( ls -A | grep -vE '\.sh|\.git$|\.gitignore$|.*.md|LICENSE|.mac_os' ) ; do
     # Silently ignore errors here because the files may already exist
     ln -svf "$PWD/$file" "$HOME"
