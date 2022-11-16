@@ -42,15 +42,15 @@ function test_internet() {
 # Generates a string of the current git branch (only if in git like in cd())
 # Found from: https://stackoverflow.com/a/1418022
 # https://stackoverflow.com/a/2185353/7573616
-function current_branch() {
+function branch_name() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
     git rev-parse --abbrev-ref HEAD
   fi
 }
 
-function current_branch_str() {
+function branch_name_str() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
-    echo "(`current_branch`)"
+    echo "(`branch_name`)"
   else
     echo ""
   fi

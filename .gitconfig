@@ -5,6 +5,7 @@
 [alias]
 	co = checkout
 	b = branch
+	bn = rev-parse --abbrev-ref HEAD
 	s = status
 	l = log
 	ignore = update-index --assume-unchanged
