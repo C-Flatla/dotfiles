@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # use up and down arrow keys to move up/down in control-r history search
+set -o vi # fixes 'line editing not enabled' when running ./bootstrap.sh
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
