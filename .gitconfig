@@ -13,8 +13,11 @@
 	ignored = !git ls-files -v | grep '^[[:lower:]]'
 [push]
 	default = current
+	autoSetupRemote = true
 [pull]
 	rebase = false
+[fetch]
+	prune = true
 
 # Don't add any configuration below this line
 # This is to support a local gitconfig file
