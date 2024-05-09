@@ -23,6 +23,7 @@ alias brc='code ~/.bashrc'
 #                             Git aliases                               #
 #***********************************************************************#
 alias s='git status'
+# TODO: Show message to keep lines in the file that should be deleted
 alias prune-merged='git branch --merged | grep -v "master" >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches && rm /tmp/merged-branches'
 alias master='git checkout master; git pull;'
 alias bn='branch_name'

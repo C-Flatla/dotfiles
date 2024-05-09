@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Mac specific settings
+# Some taken from — https://mths.be/macos
 
 # Show hidden files by default in the Finder
 defaults write com.apple.finder AppleShowAllFiles -bool true
