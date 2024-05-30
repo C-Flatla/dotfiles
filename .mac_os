@@ -20,14 +20,6 @@ if [ "$?" -eq 0 ] ; then
     # Install latest version of bash
     brew install bash
 
-    # Change default shell to bash
-    if [ $(echo $SHELL) != "/usr/local/bin/bash" ] ; then
-        if ! grep -qe "^/usr/local/bin/bash$" "/etc/shells" ; then
-            sudo echo "/usr/local/bin/bash" >> /etc/shells
-        fi
-        chsh -s /usr/local/bin/bash
-    fi
-
     # Install Inconsolata font
     brew tap homebrew/cask-fonts
     brew install font-inconsolata
