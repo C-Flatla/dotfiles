@@ -10,7 +10,7 @@ link_all () {
   touch .gitconfig.local
   for file in $( ls -A | grep -vE '\.sh|\.git$|\.vscode$|\.gitignore$|.*.md|LICENSE|.mac_os' ) ; do
     # Silently ignore errors here because the files may already exist
-    ln -svf "$PWD/$file" "$HOME"
+    ln -svf "$PWD/$file" "$HOME/"
   done
 }
 
