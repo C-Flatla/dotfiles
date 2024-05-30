@@ -21,7 +21,6 @@ if [ "$?" -eq 0 ] ; then
     brew install bash
 
     # Install Inconsolata font
-    brew tap homebrew/cask-fonts
     brew install font-inconsolata
     brew install font-noto-sans
 fi
