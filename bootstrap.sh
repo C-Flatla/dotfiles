@@ -21,6 +21,7 @@ configure_mac() {
 }
 
 link_all
+. brew.sh
 configure_mac
 verbose_resource=true && source ~/.zshrc
 

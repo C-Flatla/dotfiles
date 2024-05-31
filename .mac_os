@@ -14,13 +14,3 @@ defaults write com.google.Chrome BrowserGuestModeEnabled -bool false
 
 # Restart Finder to show changes
 killall Finder
-
-which brew 1>&/dev/null
-if [ "$?" -eq 0 ] ; then
-    # Install latest version of bash
-    brew install bash
-
-    # Install Inconsolata font
-    brew install font-inconsolata
-    brew install font-noto-sans
-fi

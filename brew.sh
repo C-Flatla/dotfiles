@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # Install command-line tools using Homebrew
 
 # Install homebrew if it is not installed
@@ -24,7 +22,7 @@ brew upgrade
 # **********************************************************************#
 #                        Basic Utilities                                #
 #***********************************************************************#
-brew install bash coreutils
+brew install bash coreutils findutils gnu-sed gawk jq
 
 # **********************************************************************#
 #                        Common Tools                                   #
@@ -32,6 +30,9 @@ brew install bash coreutils
 
 # Text interface for git
 brew install tig
+
+# Fonts
+brew install font-inconsolata font-noto-sans
 
 # **********************************************************************#
 #                        Terminal gimicks                               #
@@ -42,8 +43,6 @@ brew install fortune
 
 # ASCII cow art
 brew install cowsay
-
-
 
 # Remove outdated versions from the cellar
 brew cleanup
