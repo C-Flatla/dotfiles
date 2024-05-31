@@ -5,6 +5,10 @@
 [ -f $HOME/.functions ] && source $HOME/.functions
 [ -f $HOME/.aliases ] && source $HOME/.aliases
 
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
 if [[ $verbose_resource ]]; then echo "SOURCED .zshrc"; fi
 
 # This should be the last line of the file
