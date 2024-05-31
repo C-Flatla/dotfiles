@@ -5,7 +5,7 @@ set -o vi # fixes 'line editing not enabled' when running ./bootstrap.sh
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
-if [[ $verbose_rebash ]]; then echo "SOURCED .bashrc"; fi
+if [[ $verbose_resource ]]; then echo "SOURCED .bashrc"; fi
 
 # This should be the last line of the file
 # For local changes

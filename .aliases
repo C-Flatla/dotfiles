@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 #***********************************************************************#
 #                             Useful aliases                            #
 #***********************************************************************#
@@ -16,8 +14,8 @@ alias alldone='say -v "Fred" -r 120 "All done" || say -v "Fred" -r 120 "Somethin
 #***********************************************************************#
 #                             Bash aliases                              #
 #***********************************************************************#
-alias rebash='verbose_rebash=true && source ~/.bash_profile && unset verbose_rebash'
-alias brc='code ~/.bashrc'
+alias resource='verbose_resource=true && source ~/.bash_profile && unset verbose_resource'
+alias zrc='code ~/.zshrc'
 
 #***********************************************************************#
 #                             Git aliases                               #
@@ -32,7 +30,7 @@ alias git-ignore='git update-index --assume-unchanged'
 alias git-ignored='git ls-files -v | grep "^[[:lower:]]"'
 alias git-unignore='git update-index --no-assume-unchanged'
 
-if [[ $verbose_rebash ]]; then echo "SOURCED .aliases"; fi
+if [[ $verbose_resource ]]; then echo "SOURCED .aliases"; fi
 
 # This should be the last line of the file
 # For local changes

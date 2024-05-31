@@ -9,7 +9,7 @@
 
 [ -f $HOME/.bashrc ] && source $HOME/.bashrc
 
-if [[ $verbose_rebash ]]; then echo "SOURCED .bash_profile"; fi
+if [[ $verbose_resource ]]; then echo "SOURCED .bash_profile"; fi
 
 # This should be the last line of the file
 # For local changes

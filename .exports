@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 #***********************************************************************#
 #                        Useful terminal settings                       #
 #***********************************************************************#
@@ -19,7 +17,7 @@
 # Found from: http://unix.stackexchange.com/a/40755
 PATH=`printf %s "$PATH" | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
 
-if [[ $verbose_rebash ]]; then echo "SOURCED .exports"; fi
+if [[ $verbose_resource ]]; then echo "SOURCED .exports"; fi
 
 # This should be the last line of the file
 # For local changes
