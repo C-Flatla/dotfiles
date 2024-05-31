@@ -35,6 +35,7 @@ brew install tig
 
 # Fonts
 brew install font-inconsolata font-noto-sans
+brew install --cask font-inconsolata-nerd-font
 
 # **********************************************************************#
 #                        Terminal gimicks                               #
