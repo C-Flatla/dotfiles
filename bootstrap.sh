@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 link_all () {
   echo "Symlinking all dotfiles"
   touch .aliases.local

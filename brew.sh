@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Install command-line tools using Homebrew
 
 # Install homebrew if it is not installed
