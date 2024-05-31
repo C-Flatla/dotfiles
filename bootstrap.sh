@@ -12,14 +12,14 @@ link_all () {
   touch .zshrc.local
   for file in $( ls -A | grep -vE '\.sh|\.git$|\.vscode$|\.gitignore$|.*.md|LICENSE|.mac_os' ) ; do
     # Silently ignore errors here because the files may already exist
-    ln -sv "$PWD/$file" "$HOME/"
+    ln -sv "$PWD/$file" "$HOME/${file}"
   done
 }
 
 configure_mac() {
   if [[ "$OSTYPE" == "darwin"* ]]; then
     echo "Configuring for Mac"
-    . .mac_os
+    ./.mac_os
   fi
 }
 
@@ -38,7 +38,7 @@ configure_prezto() {
 }
 
 link_all
-. brew.sh
+./brew.sh
 configure_mac
 configure_prezto
 verbose_resource=true && source ~/.zshrc
