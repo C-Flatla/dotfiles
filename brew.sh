@@ -24,7 +24,7 @@ brew upgrade
 # **********************************************************************#
 #                        Basic Utilities                                #
 #***********************************************************************#
-brew install bash coreutils findutils gnu-sed gawk jq
+brew install bash coreutils findutils gnu-sed gawk jq exiftool
 
 # **********************************************************************#
 #                        Common Tools                                   #
