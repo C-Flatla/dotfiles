@@ -14,7 +14,7 @@ alias alldone='say -v "Fred" -r 120 "All done" || say -v "Fred" -r 120 "Somethin
 #***********************************************************************#
 #                             Zsh aliases                               #
 #***********************************************************************#
-alias resource='verbose_resource=true && source ~/.zshrc && unset verbose_resource'
+alias re-source='verbose_resource=true && source ~/.zshrc && unset verbose_resource'
 alias zrc='code ~/.zshrc'
 
 #***********************************************************************#
