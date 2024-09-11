@@ -25,9 +25,8 @@ function myip {
   printf "Local:\n$local_ip"
   # printf "$local_ip" | pbcopy
   printf "\nExternal:\n\t"
-  dig @resolver1.opendns.com myip.opendns.com -4 +short
-  # If no dig use: (sudo apt-get install dnsutils)
-  # curl http://ipecho.net/plain
+  curl -4 ifconfig.co
+  # dig @resolver1.opendns.com myip.opendns.com -4 +short # If no dig use: (sudo apt-get install dnsutils)
 }
 
 function test_internet() {
