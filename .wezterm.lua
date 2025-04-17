@@ -1,9 +1,4 @@
 local wezterm = require 'wezterm'
-local session_manager = require 'wezterm-session-manager/session-manager'
-
-wezterm.on("save_session", function(window) session_manager.save_state(window) end)
-wezterm.on("load_session", function(window) session_manager.load_state(window) end)
-wezterm.on("restore_session", function(window) session_manager.restore_state(window) end)
 
 local config = wezterm.config_builder()
 local act = wezterm.action
@@ -127,21 +122,6 @@ config.keys = {
     key = 'DownArrow',
     mods = 'CMD|SHIFT',
     action = act.ScrollToPrompt(1),
-  },
-  {
-    key = 's',
-    mods = 'CMD|SHIFT|ALT',
-    action = wezterm.action { EmitEvent = 'save_session' },
-  },
-  {
-    key = 'l',
-    mods = 'CMD|SHIFT|ALT',
-    action = wezterm.action { EmitEvent = 'load_session' },
-  },
-  {
-    key = 'r',
-    mods = 'CMD|SHIFT|ALT',
-    action = wezterm.action { EmitEvent = 'restore_session' },
   },
 }
 
