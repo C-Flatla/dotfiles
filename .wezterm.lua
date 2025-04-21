@@ -8,8 +8,13 @@ wezterm.on('gui-startup', function(cmd)
   local jo_dir = wezterm.home_dir .. '/workspace/jobber'
   local jfe_dir = wezterm.home_dir .. '/workspace/jobber-frontend/apps/jobber-online'
   local tab, left_pane, window = mux.spawn_window {
-    workspace = 'coding',
     cwd = jo_dir,
+    position = {
+      x = 1756,
+      y = 0,
+    },
+    width = 239,
+    height = 91,
   }
 
   local right_pane = left_pane:split {
@@ -59,8 +64,6 @@ config.font_size = 14.0
 config.adjust_window_size_when_changing_font_size = false
 
 -- Window size
-config.initial_rows = 64
-config.initial_cols = 272
 config.window_padding = {
   left = 2,
   right = 10,
