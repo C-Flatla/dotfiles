@@ -2,6 +2,46 @@ local wezterm = require 'wezterm'
 
 local config = wezterm.config_builder()
 local act = wezterm.action
+local mux = wezterm.mux
+
+wezterm.on('gui-startup', function(cmd)
+  local jo_dir = wezterm.home_dir .. '/workspace/jobber'
+  local jfe_dir = wezterm.home_dir .. '/workspace/jobber-frontend/apps/jobber-online'
+  local tab, left_pane, window = mux.spawn_window {
+    workspace = 'coding',
+    cwd = jo_dir,
+  }
+
+  local right_pane = left_pane:split {
+    direction = 'Right',
+    size = 0.5,
+    cwd = jo_dir,
+  }
+
+  left_pane:split {
+    direction = 'Bottom',
+    size = 0.5,
+    cwd = jo_dir,
+  }
+
+  right_pane:split {
+    direction = 'Bottom',
+    size = 0.7,
+    cwd = jo_dir,
+  }:split {
+    direction = 'Bottom',
+    size = 0.6,
+    cwd = jo_dir,
+  }:split {
+    direction = 'Bottom',
+    size = 0.5,
+    cwd = jo_dir,
+  }:split {
+    direction = 'Bottom',
+    size = 0.5,
+    cwd = jfe_dir,
+  }
+end)
 
 -- Colors
 config.color_scheme = 'JetBrains Darcula'
