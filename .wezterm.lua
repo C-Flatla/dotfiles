@@ -104,6 +104,81 @@ config.keys = {
     action = act.ShowTabNavigator,
   },
   {
+    key = 'e',
+    mods = 'CMD|SHIFT',
+    action = act.ShowLauncherArgs {
+      title = 'Select workspace',
+      flags = 'WORKSPACES',
+    },
+  },
+  {
+    key = 'r',
+    mods = 'CMD|SHIFT',
+    action = act.PaneSelect {
+      show_pane_ids = true,
+      alphabet = 'aoeuidhtns',
+    },
+  },
+  {
+    key = 'n',
+    mods = 'CMD|SHIFT',
+    action = act.PromptInputLine {
+      description = wezterm.format {
+        { Attribute = { Intensity = 'Bold' } },
+        { Foreground = { AnsiColor = 'Fuchsia' } },
+        { Text = 'Enter name for new workspace' },
+      },
+      action = wezterm.action_callback(function(window, pane, line)
+        if line then
+          window:perform_action(
+            act.SwitchToWorkspace {
+              name = line,
+            },
+            pane
+          )
+        end
+      end),
+    },
+  },
+  -- Broadcast to all panes
+  {
+    key = 's',
+    mods = 'CMD|SHIFT',
+    action = act.PromptInputLine {
+      description = wezterm.format {
+        { Attribute = { Intensity = 'Bold' } },
+        { Foreground = { AnsiColor = 'Fuchsia' } },
+        { Text = 'Enter text to broadcast to all panes' },
+      },
+      action = wezterm.action_callback(function(window, pane, line)
+        local tab = pane:tab()
+        if line then
+          for _, pane_item in ipairs(tab:panes_with_info()) do
+            pane_item.pane:send_text(line .. '\n')
+          end
+        end
+      end),
+    },
+  },
+  -- Inspiration from: https://github.com/wezterm/wezterm/discussions/1130#discussioncomment-4678096
+  {
+    key = 'i',
+    mods = 'CMD|SHIFT',
+    action = wezterm.action_callback(function(window, pane)
+      local prompt_regex = '.+\u{e0b0} '
+      local tab = pane:tab()
+      local txt = pane:get_logical_lines_as_text()
+      local cmd = string.gsub(txt, prompt_regex, '')
+      for _, p in ipairs(tab:panes_with_info()) do
+        if p.is_active then
+          p.pane:send_text('\n')
+        else
+          p.pane:send_text(cmd..'\n')
+        end
+      end
+    end),
+  },
+  {
     key = 'Enter',
     mods = 'CMD',
     action = act.TogglePaneZoomState,
@@ -114,9 +189,14 @@ config.keys = {
     action = act.ScrollToBottom,
   },
   {
-    key = 'e',
-    mods = 'CMD|SHIFT',
+    key = 'Home',
+    mods = '',
     action = act.ScrollToTop,
+  },
+  {
+    key = 'End',
+    mods = '',
+    action = act.ScrollToBottom,
   },
   {
     key = 'k',
