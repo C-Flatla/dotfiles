@@ -192,12 +192,12 @@ config.keys = {
     action = act.ScrollToBottom,
   },
   {
-    key = 'Home',
+    key = 'PageUp',
     mods = '',
     action = act.ScrollToTop,
   },
   {
-    key = 'End',
+    key = 'PageDown',
     mods = '',
     action = act.ScrollToBottom,
   },
