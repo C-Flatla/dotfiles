@@ -9,7 +9,7 @@ alias ..='cd ..'
 alias grep='grep --color=always'
 alias ps-grep='ps aux | grep'
 alias path='echo $PATH | tr ":" "\n"'
-alias alldone='say -v "Fred" -r 120 "All done" || say -v "Fred" -r 120 "Something went wrong"' # comand1 && alldone
+alias alldone='say -v "Fred" -r 120 "All done" || say -v "Fred" -r 200 "Something went wrong"' # comand1 && alldone
 
 #***********************************************************************#
 #                             Zsh aliases                               #
