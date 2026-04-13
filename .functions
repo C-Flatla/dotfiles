@@ -53,6 +53,17 @@ function branch_name_str() {
   fi
 }
 
+# Open every file touched by a PR in Cursor (from repo root).
+# Usage: pr_files          # current branch's PR
+#        pr_files 12345    # explicit PR number or branch name
+function pr_files() {
+  if [ "$#" -gt 0 ]; then
+    gh pr diff "$1" --name-only
+  else
+    gh pr diff --name-only
+  fi | xargs cursor
+}
+
 # Shows a spinner
 # start_spinner "Waiting for foobar to finish"
 # Found from: https://willcarh.art/blog/how-to-write-better-bash-spinners
